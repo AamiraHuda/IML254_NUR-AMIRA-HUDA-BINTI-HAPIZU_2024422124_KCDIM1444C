@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MY education Page</title>
+<link rel="stylesheet" href="styleEdu.css">
+</head>
+<body>
+<audio id="bgMusic" autoplay loop>
+<source src="audio/bgsound.mp3" type="audio/mpeg">
+</audio>
+<nav>
+<a href="index.html">HOME</a>
+<a href="aboutme.html">about me</a>
+<a href="myfamily.html">MY family</a>
+<a href="myeducation.html">MY education</a>
+<a href="myunilife.html">MY university life</a>
+<a href="happymoment.html">MY happy moment</a>
+<a href="myhobby.html">MY hobby</a>
+<a href="mydreams.html">MY dreams</a>
+</nav>
+
+<div class="title">
+<h1>My Education Journey ✿</h1>
+<p>Every school gave me memories, knowledge, and growth ✨</p>
+</div>
+
+<div class="education-container">
+<table class="edu-table">
+<tr class="edu-card" onclick="window.open('https://maps.app.goo.gl/EEtXRXRHGtE7CM4S8', '_blank');" style="cursor: pointer;">
+<td>
+<img src="images/myedu_tadika.png" class="school-img">
+</td>
+<td class="content">
+<div class="year">2010 - 2012</div>
+<h2>My Kindergarten School - Tabika Perpaduan Bandar Jerantut</h2>
+<p>
+This was the beginning of my learning journey where I learned basic reading, writing, and communication skills.
+</p>
+<div class="achievement">
+<h3>✧ Achievements ✧</h3>
+<ul type="circle">
+<li>Always win in colouring competition</li>
+<li>Get a certificate of completion after end of Year 6</li>
+</ul>
+</div>
+</td>
+</tr>
+
+<tr class="edu-card" onclick="window.open('https://maps.app.goo.gl/xjDcdtperpUUWbmPA', '_blank');" style="cursor: pointer;">
+<td>
+<img src="images/myedu_skj.png" class="school-img">
+</td>
+<td class="content">
+<div class="year">2013 - 2015</div>
+<h2>My First Primary School - Sekolah Kebangsaan Jerantut (SKJ)</h2>
+<p>
+I gained many friendships and experiences while improving my academic and communication skills.
+</p>
+<div class="achievement">
+<h3>✧ Achievements ✧</h3>
+<ul>
+<li>Active in sports</li>
+<li>Improve skill in learn new thing</li>
+</ul>
+</div>
+</td>
+</tr>
+
+<tr class="edu-card" onclick="window.open('https://maps.app.goo.gl/qQCVUGSGm799hoz5A', '_blank');" style="cursor: pointer;">
+<td>
+<img src="images/myedu_sksr.jpeg" class="school-img">
+</td>
+<td class="content">
+<div class="year">2016 - 2018</div>
+<h2>My Second Primary School - Sekolah Kebangsaan Sungai Retang (SKSR)</h2>
+<p>
+I also gained many friendships and experiences here. I become more active in joining many activities here too.
+</p>
+<div class="achievement">
+<h3>✧ Achievements ✧</h3>
+<ul type="circle">
+<li>Become a counseling guidance prefect</li>
+<li>Get 2 A's in UPSR</li>
+<li>Joined in many camping activity</li>
+<li>Participated in many extracurricular activities</li>
+<li>Won trophy when joined camping activity</li>
+</ul>
+</div>
+</td>
+</tr>
+
+<tr class="edu-card" onclick="window.open('https://maps.app.goo.gl/wNeGAPWM6a9Q7odg8', '_blank');" style="cursor: pointer;">
+<td>
+<img src="images/myedu_smkps.jpg" class="school-img">
+</td>
+<td class="content">
+<div class="year">2019 - 2023</div>
+<h2>Secondary School - Sekolah Menengah Kebangsaan Padang Saujana (SMKPS)</h2>
+<p>
+My secondary school life taught me responsibility, independence, and confidence. It is because I once tried to live in a hostel, which on my fifth year there.
+</p>
+<div class="achievement">
+<h3>✧ Achievements ✧</h3>
+<ul type="circle">
+<li>Get 4 A's in SPM</li>
+<li>Experiences in carry out field work successfully</li>
+<li>Joined in many camping activities</li>
+<li>Participated in many extracurricular activities</li>
+</ul>
+</div>
+</td>
+</tr>
+
+<tr class="edu-card" onclick="window.open('https://maps.app.goo.gl/dkYJjQTD4w3oxjdeA', '_blank');" style="cursor: pointer;">
+<td>
+<img src="images/myedu_uitm.jpeg" class="school-img">
+</td>
+<td class="content">
+<div class="year">2024 - Present</div>
+<h2>University Life - Universiti Teknologi MARA (UiTM)</h2>
+<p>
+University helped me grow academically and personally while creating unforgettable memories. I explored more knowledge and developed teamwork and presentation skills. 
+</p>
+<div class="achievement">
+<h3>✧ Achievements ✧</h3>
+<ul type="circle">
+<li> Dean’s list</li>
+<li>Improved leadership skills</li>
+<li>Active in group projects</li>
+<li>Give a great presentation</li>
+<li>Participated in many activities</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+<div class="quote">
+    “Education is not just learning facts, but discovering yourself along the journey 💙”
+</div>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+window.addEventListener("load", () => {
+
+    const savedTime =
+    localStorage.getItem("musicTime");
+
+    if(savedTime){
+
+        music.currentTime =
+        parseFloat(savedTime);
+    }
+
+    music.play().catch(() => {});
+});
+
+setInterval(() => {
+
+    localStorage.setItem(
+        "musicTime",
+        music.currentTime
+    );
+
+}, 1000);
+</script>
+</body>
+</html>

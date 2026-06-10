@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MY university life Page</title>
+<link rel="stylesheet" href="styleUnilife.css">
+</head>
+<body>
+<audio id="bgMusic" autoplay loop>
+<source src="audio/bgsound.mp3" type="audio/mpeg">
+</audio>
+<nav>
+<a href="index.html">HOME</a>
+<a href="aboutme.html">about me</a>
+<a href="myfamily.html">MY family</a>
+<a href="myeducation.html">MY education</a>
+<a href="myunilife.html">MY university life</a>
+<a href="happymoment.html">MY happy moment</a>
+<a href="myhobby.html">MY hobby</a>
+<a href="mydreams.html">MY dreams</a>
+</nav>
+
+<div class="title">
+<h1>My University Life ✿</h1>
+<p>The best memories, experiences, and moments of growth 💙</p>
+</div>
+
+<div class="story-box">
+<h2>♡ My University Story ♡</h2>
+<p>
+University life has been one of the most meaningful journeys in my life. 
+I met amazing friends, learned many new things, and experienced unforgettable moments. 
+From stressful assignments to happy class moments, every experience helped me grow into a stronger and more confident person. 
+I also enjoyed participating in university programs, taking photos with friends, and creating beautiful memories together. 
+Even though university life can sometimes be challenging, it taught me independence, responsibility, and the importance of friendship ✨
+</p>
+</div>
+
+<h2 style="text-align:center;">University Memories 🎓</h2>
+<div class="memories-container">
+<div class="video-box">
+<video controls>
+<source src="videos/unilifeVid.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="slider-wrapper">
+<div class="photo-slider">
+<div class="photo-slide">
+<img src="images/unilife_img1.jpeg" onclick="openModal(this.src)">
+<p>Outing Time 🎉</p>
+</div>
+
+<div class="photo-slide">
+<img src="images/unilife_img2.jpeg" onclick="openModal(this.src)">
+<p>Class Presentation Day ✨</p>
+</div>
+
+<div class="photo-slide">
+<img src="images/unilife_img3.jpeg" onclick="openModal(this.src)">
+<p>Before Class Presentation 📚</p>
+</div>
+
+<div class="photo-slide">
+<img src="images/unilife_img4.jpeg" onclick="openModal(this.src)">
+<p>Campus Life 🌸</p>
+</div>
+
+<div class="photo-slide">
+<img src="images/unilife_img5.jpeg" onclick="openModal(this.src)">
+<p>Special Memories 💙</p>
+</div>
+
+<div class="photo-slide">
+<img src="images/unilife_img6.jpeg" onclick="openModal(this.src)">
+<p>Friends Forever ☁</p>
+</div>
+<a class="prev-photo" onclick="changePhoto(-1)">❮</a>
+<a class="next-photo" onclick="changePhoto(1)">❯</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="quote">
+“University life is not only about studying, but also about creating memories that stay forever ✨”
+</div>
+
+<script>
+let photoIndex = 1;
+
+showPhoto(photoIndex);
+
+function changePhoto(n){
+    showPhoto(photoIndex += n);
+}
+
+function showPhoto(n){
+
+    let slides =
+    document.getElementsByClassName("photo-slide");
+
+    if(n > slides.length){
+        photoIndex = 1;
+    }
+
+    if(n < 1){
+        photoIndex = slides.length;
+    }
+
+    for(let i=0;i<slides.length;i++){
+        slides[i].style.display="none";
+    }
+
+    slides[photoIndex-1].style.display="block";
+}
+setInterval(function(){
+    photoIndex++;
+    showPhoto(photoIndex);
+
+},3000);
+</script>
+
+<script>
+const music = document.getElementById("bgMusic");
+window.addEventListener("load", () => {
+
+    const savedTime =
+    localStorage.getItem("musicTime");
+    if(savedTime){
+        music.currentTime =
+        parseFloat(savedTime);
+    }
+    music.play().catch(() => {});
+});
+setInterval(() => {
+    localStorage.setItem(
+        "musicTime",
+        music.currentTime
+    );
+
+}, 1000);
+
+const videos = document.querySelectorAll("video");
+
+videos.forEach(video => {
+
+    video.addEventListener("play", () => {
+        music.pause();
+    });
+
+    video.addEventListener("pause", () => {
+
+        if(video.ended === false){
+            music.play();
+        }
+
+    });
+
+    video.addEventListener("ended", () => {
+        music.play();
+    });
+
+});
+</script>
+</body>
+</html>

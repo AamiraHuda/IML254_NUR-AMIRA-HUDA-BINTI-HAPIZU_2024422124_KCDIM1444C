@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MY dreams Page</title>
+<link rel="stylesheet" href="styleDreams.css">
+</head>
+<body>
+<audio id="bgMusic" autoplay loop>
+<source src="audio/bgsound.mp3" type="audio/mpeg">
+</audio>
+<div class="light light1"></div>
+<div class="light light2"></div>
+<nav>
+<a href="index.html">HOME</a>
+<a href="aboutme.html">about me</a>
+<a href="myfamily.html">MY family</a>
+<a href="myeducation.html">MY education</a>
+<a href="myunilife.html">MY university life</a>
+<a href="happymoment.html">MY happy moment</a>
+<a href="myhobby.html">MY hobby</a>
+<a href="mydreams.html">MY dreams</a>
+</nav>
+
+<div class="header">
+<h1>MY DREAMS ✦</h1>
+<p>
+Dream big, work hard, and create the future you deserve ✨
+</p>
+</div>
+
+<div class="dream-box">
+<h2>☁ My Future Dreams ☁</h2>
+<p style="font-size: 20px;">
+My dreams are not only about achieving success, but also about becoming a better version of myself. 
+My ambition is, if I can, I want to become a lecturer, a photographer, or a librarian.
+Even though the journey may be difficult sometimes, I believe every small step will bring me closer to the future I imagine.
+</p>
+</div>
+
+<div class="dream-gallery">
+<div class="top-image">
+<img src="images/dreams_img1.jpg">
+</div>
+
+<div class="bottom-images">
+<img src="images/dreams_img2.jpg">
+<img src="images/dreams_img3.jpg">
+</div>
+</div>
+
+<div class="goal-section">
+<h2 class="goal-title">My Future Goals</h2>
+<table class="goal-table">
+<tr>
+<th>Category</th>
+<th>My Dream</th>
+</tr>
+<tr>
+<td>My life Vision</td>
+<td>Always make my parents proud of me and happy for me.</td>
+</tr>
+<tr>
+<td>My life Mission</td>
+<td>To always reach my target on time.</td>
+</tr>
+<tr>
+<td>✦ Career</td>
+<td>To achieve a successful career and continuously improve my skills.</td>
+</tr>
+<tr>
+<td>☁ Happiness</td>
+<td>To live peacefully and create a meaningful life with loved ones.</td>
+</tr>
+<tr>
+<td>✧ Adventure</td>
+<td>To travel around the world and experience beautiful moments.</td>
+</tr>
+</table>
+</div>
+
+<div class="quote">
+“The future belongs to those who believe in the beauty of their dreams ✨”
+</div>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+window.addEventListener("load", () => {
+
+    const savedTime =
+    localStorage.getItem("musicTime");
+
+    if(savedTime){
+
+        music.currentTime =
+        parseFloat(savedTime);
+    }
+
+    music.play().catch(() => {});
+});
+setInterval(() => {
+
+    localStorage.setItem(
+        "musicTime",
+        music.currentTime
+    );
+
+}, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MY happy moments Page</title>
+<link rel="stylesheet" href="styleMoment.css">
+</head>
+<body>
+<audio id="bgMusic" autoplay loop>
+<source src="audio/bgsound.mp3" type="audio/mpeg">
+</audio>
+<nav>
+<a href="index.html">HOME</a>
+<a href="aboutme.html">about me</a>
+<a href="myfamily.html">MY family</a>
+<a href="myeducation.html">MY education</a>
+<a href="myunilife.html">MY university life</a>
+<a href="happymoment.html">MY happy moment</a>
+<a href="myhobby.html">MY hobby</a>
+<a href="mydreams.html">MY dreams</a>
+</nav>
+
+<div class="header">
+<h1>My Happy Moment</h1>
+<p>Beautiful memories that make my life brighter 💙</p>
+</div>
+
+<div class="memory-journal">
+<div class="slider-container">
+<div class="mySlides">
+<img src="images/moment_meANDumi.jpg">
+</div>
+
+<div class="mySlides">
+<img src="images/moment_abah.jpg">
+</div>
+
+<div class="mySlides">
+<img src="images/moment_1family.jpg">
+</div>
+
+<div class="mySlides">
+<img src="images/moment_hakimANDamal.jpeg">
+</div>
+
+<div class="mySlides">
+<img src="images/moment_meANDhakimANDumi.jpeg">
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<div class="journal-text">
+<h2>♡ Memory Journal ♡</h2>
+<p>Life becomes more meaningful because of the beautiful moments we create with the people around us. Every experience teaches us something valuable, and every memory becomes a part of our story. These moments remind me to appreciate happiness, friendship, family, and all the blessings in life.</p>
+</div>
+</div>
+
+<div class="video-section">
+<h2>Happy Videos 🎥</h2>
+<div class="video-wrapper">
+<div class="video-card">
+<video controls>
+<source src="videos/myexp_familyVid.mp4" type="video/mp4">
+</video>
+<p>Trip with Family ✿</p>
+</div>
+<div class="video-card">
+<video controls>
+<source src="videos/myexp_adhaVid.mp4" type="video/mp4">
+</video>
+<p>Special Celebration ♡</p>
+</div>
+</div>
+</div>
+
+<div class="notes-section">
+<h2 class="notes-title">Little Happy Notes ☁</h2>
+<div class="notes-container">
+<div class="note note1">
+<h3>♡ Friendship</h3>
+<p>
+The happiest moments are when I laugh together with my closest friends.
+</p>
+</div>
+
+<div class="note note2">
+<h3>✦ Family Time</h3>
+<p>
+Spending time with family always brings comfort and happiness.
+</p>
+</div>
+
+<div class="note note3">
+<h3>☁ Small Joys</h3>
+<p>
+Sometimes the smallest moments become the most unforgettable memories.
+</p>
+</div>
+</div>
+</div>
+<body>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n){
+    showSlides(slideIndex += n);
+}
+
+function showSlides(n){
+
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+
+    if(n > slides.length){
+        slideIndex = 1;
+    }
+
+    if(n < 1){
+        slideIndex = slides.length;
+    }
+
+    for(i = 0; i < slides.length; i++){
+        slides[i].style.display = "none";
+    }
+
+    slides[slideIndex-1].style.display = "block";
+}
+</script>
+
+<script>
+const music = document.getElementById("bgMusic");
+window.addEventListener("load", () => {
+
+    const savedTime =
+    localStorage.getItem("musicTime");
+
+    if(savedTime){
+
+        music.currentTime =
+        parseFloat(savedTime);
+    }
+
+    music.play().catch(() => {});
+});
+
+setInterval(() => {
+
+    localStorage.setItem(
+        "musicTime",
+        music.currentTime
+    );
+
+}, 1000);
+
+const videos = document.querySelectorAll("video");
+
+videos.forEach(video => {
+
+    video.addEventListener("play", () => {
+        music.pause();
+    });
+
+    video.addEventListener("pause", () => {
+
+        if(video.ended === false){
+            music.play();
+        }
+
+    });
+
+    video.addEventListener("ended", () => {
+        music.play();
+    });
+
+});
+</script>
+</body>
+</html>

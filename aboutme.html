@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>about me Page</title>
+<link rel="stylesheet" href="styleAboutMe.css">
+</head>
+<body>
+<audio id="bgMusic" autoplay loop>
+<source src="audio/bgsound.mp3" type="audio/mpeg">
+</audio>
+<nav> 
+<a href="index.html">HOME</a> 
+<a href="aboutme.html">about me</a> 
+<a href="myfamily.html">MY family</a> 
+<a href="myeducation.html">MY education</a> 
+<a href="myunilife.html">MY university life</a> 
+<a href="happymoment.html">MY happy moment</a>
+<a href="myhobby.html">MY hobby</a>
+<a href="mydreams.html">MY dreams</a>
+</nav>
+
+<div class="about-container">
+<div class="profile-card">
+<img src="images/me_img1.jpeg" alt="My Photo">
+<img src="images/me_img2.jpeg" alt="My Photo">
+<h1>About Me ♡</h1>
+<p class="intro">
+Hello! My name is Amira ✿ <br>
+I love all blue color, photography, music, singing and breathtaking scenery.
+</p>
+</div>
+<div class="info-section">
+<div class="cute-box" align="left">
+<h2>✧ Basic Info ✧</h2>
+<p><b>Name:</b> Nur Amira Huda Binti Hapizu</p>
+<p><b>Age:</b> 20 years old</p>
+<p><b>Birthday:</b> 27 May 2006</p>
+<p><b>From:</b> Jerantut, Pahang</p>
+</div>
+
+<div class="cute-box">
+<h2>♡ My Favourite Things ♡</h2>
+<ul>
+<li>Chicken chop</li>
+<li>Chocolate & coffee</li>
+<li>K-Pop Musics</li>
+<li>Taking pictures</li>
+<li>Flowers</li>
+</ul>
+</div>
+
+<div class="cute-box">
+<h2>★ Fun Facts ★</h2>
+<ol align="left">
+<li>I love all pets especially cats</li>
+<li>I enjoy soft pastel colors</li>
+<li>I scare of lizard</li>
+<li>I always smile toward others</li>
+</ol>
+</div>
+</div>
+</div> 
+
+<div class="bubble bubble1"></div>
+<div class="bubble bubble2"></div>
+<div class="video-box">
+<center>
+<video controls>
+<source src="videos/meVid.mp4" type="video/mp4">
+</video>
+</center>
+</div>
+
+<script>
+const music = document.getElementById("bgMusic");
+window.addEventListener("load", () => {
+
+    const savedTime =
+    localStorage.getItem("musicTime");
+
+    if(savedTime){
+
+        music.currentTime =
+        parseFloat(savedTime);
+    }
+
+    music.play().catch(() => {});
+});
+
+setInterval(() => {
+
+    localStorage.setItem(
+        "musicTime",
+        music.currentTime
+    );
+
+}, 1000);
+
+const videos = document.querySelectorAll("video");
+
+videos.forEach(video => {
+
+    video.addEventListener("play", () => {
+        music.pause();
+    });
+
+    video.addEventListener("pause", () => {
+
+        if(video.ended === false){
+            music.play();
+        }
+
+    });
+
+    video.addEventListener("ended", () => {
+        music.play();
+    });
+
+});
+</script>
+</body>
+</html>

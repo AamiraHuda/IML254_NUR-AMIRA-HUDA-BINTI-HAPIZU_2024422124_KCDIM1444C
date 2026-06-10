@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MY family Page</title>
+<link rel="stylesheet" href="styleFamily.css">
+</head>
+<body>
+<audio id="bgMusic" autoplay loop>
+<source src="audio/bgsound.mp3" type="audio/mpeg">
+</audio>
+<nav>
+<a href="index.html">HOME</a>
+<a href="aboutme.html">about me</a>
+<a href="myfamily.html">MY family</a>
+<a href="myeducation.html">MY education</a>
+<a href="myunilife.html">MY university life</a>
+<a href="happymoment.html">MY happy moment</a>
+<a href="myhobby.html">MY hobby</a>
+<a href="mydreams.html">MY dreams</a>
+</nav>
+
+<div class="title">
+<h1>My Lovely Family ♡</h1>
+<p>The people who make my life beautiful ✨</p>
+</div>
+
+<div class="family-container">
+<div class="family-card">
+<img src="images/fam_abah.jpeg">
+<h2>My Father</h2>
+<p>My father's name is Hapizu Bin Awang</p>
+<p>He is a teacher. He is very hardworking and caring person who always supports our family.</p>
+</div>
+
+<div class="family-card">
+<img src="images/fam_umi.jpeg">
+<h2>My Mother</h2>
+<p>My mother's name is Hafizatul Akma Binti Abdul Ghani.</p>
+<p>She is also a teacher. She is the sweetest person who always gives love and encouragement anywhere and anytime.</p>
+</div>
+
+<div class="family-card">
+<img src="images/fam_haziq.jpeg">
+<h2>My 1st Little Brother</h2>
+<p>He's name is Haziq Akmal Bin Hapizu</p>
+<p>He is very smart and genius. He will continue his diploma this year.</p>
+</div>
+
+<div class="family-card">
+<img src="images/fam_amal.jpeg">
+<h2>My 2nd Little Brother</h2>
+<p>He's name is Amal Husaini Bin Hapizu</p>
+<p>He like to study and learning something new everyday.</p>
+</div>
+
+<div class="family-card">
+<img src="images/fam_hakim.jpeg">
+<h2>My 3rd Little Brother</h2>
+<p>He's name is Husnul Hakim Bin Hapizu</p>
+<p>He love to explore more and like to play video games.</p>
+</div>
+</div>
+
+<div class="quote">
+    “Family is where life begins and love never ends 💙”
+</div>
+
+<div class="memory-section">
+<h2>Beautiful Memories ✿</h2>
+<div class="memory-gallery">
+<img src="images/fam_img1.jpeg">
+<img src="images/fam_img2.jpeg">
+<img src="images/fam_img3.jpeg">
+<img src="images/fam_img4.jpeg">
+</div>
+</div>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+window.addEventListener("load", () => {
+    const savedTime =
+    localStorage.getItem("musicTime");
+
+    if(savedTime){
+
+        music.currentTime =
+        parseFloat(savedTime);
+    }
+
+    music.play().catch(() => {});
+});
+
+setInterval(() => {
+
+    localStorage.setItem(
+        "musicTime",
+        music.currentTime
+    );
+
+}, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>HOME Page</title> 
+<link rel="stylesheet" href="style.css">
+</head> 
+<body> 
+<audio id="bgMusic" autoplay loop>
+<source src="audio/bgsound.mp3" type="audio/mpeg">
+</audio>
+<nav> 
+<a href="index.html">HOME</a> 
+<a href="aboutme.html">about me</a> 
+<a href="myfamily.html">MY family</a> 
+<a href="myeducation.html">MY education</a> 
+<a href="myunilife.html">MY university life</a> 
+<a href="happymoment.html">MY happy moment</a>
+<a href="myhobby.html">MY hobby</a>
+<a href="mydreams.html">MY dreams</a>
+</nav> 
+
+<div class="slider-container"> 
+<div class="slides"> 
+<div class="slide"><img src="images/home_slide1.jpeg" alt="UiTM Kedah Campus View"></div> 
+<div class="slide"><img src="images/home_slide2.jpg" alt="University Event Life"></div> 
+<div class="slide"><img src="images/home_slide3.jpeg" alt="Student Group Frame"></div> 
+<div class="slide"><img src="images/home_slide4.jpeg" alt="UiTM Kedah Campus View"></div> 
+<div class="slide"><img src="images/home_slide5.jpg" alt="Student Group Frame"></div> 
+</div> 
+</div> 
+
+<div class="home"> 
+
+<h1 style="color: white; -webkit-text-stroke: 2px black; align: "left">Welcome to</h1> 
+<h1 style="color: white; -webkit-text-stroke: 2px black;"><mark>My Personal Website</mark></h1> 
+
+<p> 
+A peek into my memories, dreams and future moves.
+</p> 
+
+<div class="menu-cards"> 
+
+<div class="card"> 
+<h3>About Me</h3> 
+<a href="aboutme.html"><img src="images/home_me1.jpeg"></a>
+</div> 
+
+<div class="card"> 
+<h3>MY family</h3> 
+<a href="myfamily.html"><img src="images/home_family1.jpeg"></a> 
+</div> 
+
+<div class="card"> 
+<h3>MY education</h3> 
+<a href="myeducation.html"><img src="images/home_education_UiTM.jpg"></a> 
+</div> 
+
+<div class="card"> 
+<h3>MY university life</h3> 
+<a href="myunilife.html"><img src="images/home_unilife.jpeg"></a> 
+</div> 
+
+<div class="card"> 
+<h3>MY happy moment</h3> 
+<a href="happymoment.html"><img src="images/home_exp.jpeg"></a> 
+</div> 
+
+<div class="card"> 
+<h3>MY hobby</h3> 
+<a href="myhobby.html"><img src="images/home_hobby.jpeg"></a> 
+</div> 
+
+<div class="card"> 
+<h3>MY dream</h3> 
+<a href="mydreams.html"><img src="images/home_mydream.jpg"></a>
+</div> 
+</div> 
+
+<footer class="site-footer">
+<div class="footer-content">
+<div class="footer-section">
+<h3>Contact Me</h3>
+<p>📍 Lot 82/2 KM 8 Jalan Melati, Kg. Temin, 27000 Jerantut, Pahang Darul Makmur</p>
+<p>📞 Phone: <a href="tel:+601158837674">+60 11-5883-7674</a></p>
+<p>✉️ Personal Email: <a href="mailto:amirahuda0312@gmail.com">amirahuda0312@gmail.com</a></p>
+<p>✉️ University Email: <a href="mailto:2024422124@student.uitm.edu.my">2024422124@student.uitm.edu.my</a></p>
+</div>
+    
+<div class="footer-section">
+<h3>Quick Links</h3>
+<p><a href="index.html">HOMEPAGE</a></p>
+<p><a href="index.html">My Personal Website</a></p>
+</div>
+</div>
+</div>
+</footer>
+
+<button onclick="topFunction()" class="top-btn">
+Return to Top
+</button>
+<script>
+const music = document.getElementById("bgMusic");
+
+window.addEventListener("load", () => {
+
+    const savedTime =
+    localStorage.getItem("musicTime");
+
+    if(savedTime){
+
+        music.currentTime =
+        parseFloat(savedTime);
+    }
+
+    music.play().catch(() => {});
+});
+
+setInterval(() => {
+
+    localStorage.setItem(
+        "musicTime",
+        music.currentTime
+    );
+
+}, 1000);
+</script>
+
+<script>
+function topFunction(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+</script>
+</body> 
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MY hobby Page</title>
+<link rel="stylesheet" href="styleHobby.css">
+</head>
+<body>
+<audio id="bgMusic" autoplay loop>
+<source src="audio/bgsound.mp3" type="audio/mpeg">
+</audio>
+<nav>
+<a href="index.html">HOME</a>
+<a href="aboutme.html">about me</a>
+<a href="myfamily.html">MY family</a>
+<a href="myeducation.html">MY education</a>
+<a href="myunilife.html">MY university life</a>
+<a href="happymoment.html">MY happy moment</a>
+<a href="myhobby.html">MY hobby</a>
+<a href="mydreams.html">MY dreams</a>
+</nav>
+
+<div class="header">
+<h1>My Hobby ☁</h1>
+<p>Reading opens the door to imagination and knowledge ✨</p>
+</div>
+
+<div class="image-section">
+<h2>Reading Moments 📚</h2>
+<div class="computer-container">
+
+<div class="computer">
+
+<div class="screen">
+<img src="images/hobby_img1.jpg">
+</div>
+
+<div class="stand"></div>
+<div class="base"></div>
+</div>
+
+<div class="computer">
+<div class="screen">
+<img src="images/hobby_img2.jpg">
+</div>
+
+<div class="stand"></div>
+<div class="base"></div>
+</div>
+</div>
+</div>
+
+<div class="video-section">
+<h2>Reading Vlog 🎥</h2>
+<div class="laptop">
+<div class="laptop-screen">
+<video controls>
+<source src="videos/hobbyVid.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="laptop-keyboard"></div>
+</div>
+</div>
+
+<div class="books-section">
+<h2>Favorite Books ♡</h2>
+<div class="book-cards">
+<div class="book">
+<h3>☁ Novels</h3>
+<p style="font-size: 20px;">
+I enjoy emotional and meaningful stories that inspire me.
+</p>
+</div>
+
+<div class="book">
+<h3>✨ Motivation Books</h3>
+<p style="font-size: 20px;">
+Motivational books help me become more positive and confident.
+</p>
+</div>
+
+<div class="book">
+<h3>My Favourite Book Genres</h3>
+<ul type="circle">
+<li style="font-size: 20px;" align="left">Fantacy</li>
+<li style="font-size: 20px;" align="left">Romance</li>
+<li style="font-size: 20px;" align="left">Comedy</li>
+<li style="font-size: 20px;" align="left">Mystery</li>
+<li style="font-size: 20px;" align="left">Triller & Suspense</li>
+</ul>
+</div>
+</div>
+</div>
+
+<script>
+const music = document.getElementById("bgMusic");
+window.addEventListener("load", () => {
+
+    const savedTime =
+    localStorage.getItem("musicTime");
+
+    if(savedTime){
+
+        music.currentTime =
+        parseFloat(savedTime);
+    }
+
+    music.play().catch(() => {});
+});
+
+setInterval(() => {
+
+    localStorage.setItem(
+        "musicTime",
+        music.currentTime
+    );
+
+}, 1000);
+
+const videos = document.querySelectorAll("video");
+videos.forEach(video => {
+
+    video.addEventListener("play", () => {
+        music.pause();
+    });
+
+    video.addEventListener("pause", () => {
+
+        if(video.ended === false){
+            music.play();
+        }
+    });
+
+    video.addEventListener("ended", () => {
+        music.play();
+    });
+});
+</script>
+</body>
+</html>

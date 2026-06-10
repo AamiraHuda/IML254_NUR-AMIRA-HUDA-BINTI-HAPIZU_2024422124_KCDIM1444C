@@ -1,0 +1,182 @@
+html, body{
+    margin:0;
+    padding:0;
+    font-family:Arial;
+}
+body{
+    background-image:url('images/dreamsBg.jpeg');
+    background-size:cover;
+    background-attachment:fixed;
+    background-position:center;
+}
+nav{
+    background:rgba(255,255,255,0.08);
+    background-color:#587D90;
+    padding:22px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+nav a{
+    text-decoration:none;
+    color:white;
+    margin:18px;
+    font-size:18px;
+    font-weight:bold;
+    transition:0.3s;
+}
+nav a:hover{
+    color:#DFF6FF;
+}
+.header{
+    text-align:center;
+    padding:70px 20px 40px;
+}
+.header h1{
+    font-size:60px;
+    color:white;
+    margin-bottom:15px;
+    letter-spacing:3px;
+    text-shadow:0px 0px 15px rgba(255,255,255,0.4);
+}
+.header p{
+    font-size:22px;
+    color:#bdebfc;
+    font-style:italic;
+}
+.dream-box{
+    width:75%;
+    margin:auto;
+    margin-top:40px;
+    padding:50px;
+    color:white;
+    line-height:2;
+    text-align:justify;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(150px);
+
+    border-radius:60px 15px 60px 15px;
+
+    box-shadow:
+    0px 0px 25px rgba(183,215,232,0.3),
+    0px 0px 45px rgba(255,214,232,0.15);
+
+    border:1px solid rgba(255,255,255,0.15);
+}
+.dream-box h2{
+    text-align:center;
+    color:#98FF98;
+    font-size:35px;
+    margin-bottom:25px;
+    letter-spacing:2px;
+}
+.dream-gallery{
+    margin-top:90px;
+    margin-bottom:90px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+}
+.top-image img{
+    width:420px;
+    height:270px;
+    object-fit:cover;
+    border-radius:35px;
+    border:3px solid rgba(255,255,255,0.2);
+    box-shadow:
+    0px 0px 20px rgba(183,215,232,0.5),
+    0px 0px 35px rgba(255,214,232,0.25);
+    transition:0.3s;
+}
+.bottom-images{
+    display:flex;
+    gap:35px;
+}
+.bottom-images img{
+    width:300px;
+    height:220px;
+    object-fit:cover;
+    border-radius:30px 10px 30px 10px;
+    border:3px solid rgba(255,255,255,0.2);
+    box-shadow:
+    0px 0px 20px rgba(183,215,232,0.4),
+    0px 0px 30px rgba(255,214,232,0.2);
+    transition:0.3s;
+}
+.top-image img:hover,
+.bottom-images img:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+.light{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    filter:blur(10px);
+}
+.light1{
+    width:120px;
+    height:120px;
+    top:150px;
+    left:80px;
+}
+.light2{
+    width:90px;
+    height:90px;
+    bottom:120px;
+    right:100px;
+}
+.goal-section{
+    width:85%;
+    margin:auto;
+    margin-bottom:100px;
+}
+.goal-title{
+    text-align:center;
+    color:white;
+    font-size:42px;
+    margin-bottom:40px;
+}
+.goal-table{
+    width:85%;
+    margin:auto;
+    border-collapse:collapse;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(100px);
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:
+    0px 0px 25px rgba(183,215,232,0.25);
+    border:1px solid rgba(255,255,255,0.12);
+}
+.goal-table th{
+    background:rgba(190,233,255,0.2);
+    color:#DFF6FF;
+    padding:20px;
+    font-size:22px;
+    letter-spacing:1px;
+}
+.goal-table td{
+    padding:22px;
+    color:white;
+    font-size:18px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.goal-table tr:hover{
+    background:rgba(255,255,255,0.05);
+}
+.quote{
+    width:70%;
+    margin:auto;
+    margin-bottom:90px;
+    background:rgba(255,255,255,0.08);
+    padding:35px;
+    border-radius:80px 20px 80px 20px;
+    text-align:center;
+    color:white;
+    font-size:26px;
+    font-style:italic;
+    backdrop-filter:blur(50px);
+    box-shadow:
+    0px 0px 25px rgba(183,215,232,0.25);
+}
